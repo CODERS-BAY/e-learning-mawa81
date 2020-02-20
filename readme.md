@@ -52,6 +52,7 @@ The type (TYPE) is also stored for learning objects.
 In some cases, an e-course may also be assigned a test module (maximum). A mode 
 (MODE) of a test module is known and a unique name (DEFINITION) 
 
+![ERM](20200220_094624.jpg)
 
 (Entity) E-course(LVANR:int, designation:varchar(32),MAXIMUM:int, SIZE:int, isPrerequisiteForWhichCourse:Array, ORDER:Array)
 (Entity) Learning Module(ID:int, Name:varchar(32), learningObjects:Array)
