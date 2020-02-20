@@ -55,7 +55,14 @@ In some cases, an e-course may also be assigned a test module (maximum). A mode
 
 (Entity) E-course(LVANR:int, designation:varchar(32),MAXIMUM:int, SIZE:int, isPrerequisiteForWhichCourse:Array, ORDER:Array)
 (Entity) Learning Module(ID:int, Name:varchar(32), learningObjects:Array)
-(Entity) Learning Object(Learning Modul:Array, Name:varchar(32), pictures:varchar(32), texts:Array, videos:Array)
+(Entity) Learning Object(Learning Modul:Array, Name:varchar(32), Type:varchar(32))
+(Entity) Test-Modul(UID:int, Mode:varchar(32))
+(Entity) Exam-Modul()
+(Entity) Submission()
+(Entity) MC-Test()
+(Entity) Question()
+(Entity) Person()
+
+
 N e-courses are assigned to M Learning Modules
 
-learningObjects:Array (e.g. pictures, texts, videos)
