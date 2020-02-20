@@ -26,6 +26,7 @@ stored. Persons can participate in any number of courses. An e-course, is modera
 by at least one and at most two persons, whereby one person can moderate a maximum 
 of four courses.
 
+
 isNotNull:boolean
 
 e-course
@@ -52,6 +53,8 @@ The type (TYPE) is also stored for learning objects.
 In some cases, an e-course may also be assigned a test module (maximum). A mode 
 (MODE) of a test module is known and a unique name (DEFINITION) 
 
+#### Own Solution
+
 ![ERM](20200220_094624.jpg)
 
 (Entity) E-course(LVANR:int, designation:varchar(32),MAXIMUM:int, SIZE:int, isPrerequisiteForWhichCourse:Array, ORDER:Array)
@@ -67,3 +70,5 @@ In some cases, an e-course may also be assigned a test module (maximum). A mode
 
 N e-courses are assigned to M Learning Modules
 
+#### Group Solution
+![ERM Group](Unbenannt.png)
