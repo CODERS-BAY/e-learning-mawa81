@@ -26,6 +26,7 @@ stored. Persons can participate in any number of courses. An e-course, is modera
 by at least one and at most two persons, whereby one person can moderate a maximum 
 of four courses.
 
+### first solution
 
 isNotNull:boolean
 
@@ -71,4 +72,7 @@ In some cases, an e-course may also be assigned a test module (maximum). A mode
 N e-courses are assigned to M Learning Modules
 
 #### Group Solution
-![ERM Group](Unbenannt.png)
+![ERM Group](e-learning_all.jfif)
+
+
+### second solution
