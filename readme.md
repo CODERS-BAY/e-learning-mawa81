@@ -76,3 +76,37 @@ N e-courses are assigned to M Learning Modules
 
 
 ### second solution
+
+#### ERM:
+
+![ERM](myERM.jpg)
+
+#### textual Notation:
+
+course(**LVANR**:int, NAME:varchar(32), size:int ,max_participants:int, max_moderators:int, max_testmodules:int)
+
+prerequisite-course(ORDER:int, *LVANR*:int, *course*:int)
+
+learning-module(**LMID**:int, NAME:varchar(32))
+
+learning-module-per-course(*LVANR*:int,*LMID*:int)
+
+lm-order(sequenceNR:int, *LMID*:int)
+
+learning-object(**NAME**:varchar(32),**LMID**:int, type:varchar(32))
+
+course-test-module(*LVANR*:int, *TMID*:int)
+
+test-module(**TMID**:int, time:int, deadline:timestamp )
+
+test-mode(**TMID**:int, **mode**:varchar(32), is_extern:boolean, fees:int)
+
+questions-of-test-mode(*TMID*:int, *mode*:varchar(32), *QID*:int)
+
+question(**QID**:int, text:varchar(1000), aw_true:varchar(1000), aw_false1:varchar(1000), aw_false2:varchar(1000))
+
+person(**PNR**:int,firstname:varchar(32),lastname:varchar(32), max_course_moderations:int)
+
+person-in-courses(*PNR*:int, *LVANR*:int , is_moderator:boolean)
+
+#### SQL Schema:
