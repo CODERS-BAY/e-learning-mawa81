@@ -85,7 +85,7 @@ N e-courses are assigned to M Learning Modules
 
 course(**LVANR**:int, NAME:varchar(32), size:int ,max_participants:int, max_moderators:int, max_testmodules:int)
 
-prerequisite-course(ORDER:int, *LVANR*:int, *course*:int)
+prerequisite-course(ORDERNR:int, *LVANR*:int, *course*:int)
 
 learning-module(**LMID**:int, NAME:varchar(32))
 
@@ -110,3 +110,36 @@ person(**PNR**:int,firstname:varchar(32),lastname:varchar(32), max_course_modera
 person-in-courses(*PNR*:int, *LVANR*:int , is_moderator:boolean)
 
 #### SQL Schema:
+
+[SQL Schema Link](e_learningDB_Schema.pdf)
+
+
+SQL Code:
+```
+CREATE TABLE course(LVANR int(8), NAME varchar(32), size int(8) ,max_participants int(2), max_moderators int(1), max_testmodules int(8), PRIMARY KEY(LVAID));
+
+CREATE TABLE prerequisite_course(ORDERNR int(8), LVANR int(8), course int(8));
+
+CREATE TABLE learning_module(LMID int(8), NAME varchar(32), PRIMARY KEY(LMID));
+
+CREATE TABLE learningmodule_per_course(LVANR int(8), LMID int(8));
+
+CREATE TABLE lm_order(sequenceNR int(8), LMID int(8));
+
+CREATE TABLE learning_object( NAME varchar(32), LMID int(8), type varchar(32), PRIMARY KEY(NAME, LMID));
+
+CREATE TABLE course_test_module( LVANR int(8), TMID int(8));
+
+CREATE TABLE test_module( TMID int(8), time int(8), deadline timestamp, PRIMARY KEY(TMID));
+
+CREATE TABLE test_mode( TMID int(8),  mode varchar(32), is_extern boolean, fees int(8), PRIMARY KEY(TMID, mode));
+
+CREATE TABLE questions_of_test_mode( TMID int(8), mode varchar(32), QID int(8));
+
+CREATE TABLE question( QID int(8), text varchar(1000), aw_true varchar(1000), aw_false1 varchar(1000), aw_false2 varchar(1000), PRIMARY KEY(QID));
+
+CREATE TABLE person( PNR int(8), firstname varchar(32), lastname varchar(32), max_course_moderations int(8), PRIMARY KEY(PNR));
+
+CREATE TABLE person_in_courses( PNR int(8), LVANR int(8) , is_moderator boolean, PRIMARY KEY(PNR, LVANR));
+
+```
